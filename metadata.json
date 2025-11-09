@@ -1,0 +1,5 @@
+{
+  "name": "RAD Jigsaw Puzzle",
+  "description": "An interactive jigsaw puzzle game where you can solve puzzles from a default image, upload your own, or generate a unique puzzle image using Google's Imagen AI. The application supports saving and loading game progress.",
+  "requestFramePermissions": []
+}
