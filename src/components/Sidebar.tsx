@@ -1,17 +1,21 @@
 import React from 'react';
+import AdComponent from './AdComponent';
 
 const Sidebar: React.FC = () => {
   return (
     <aside
       className="bg-gray-900/50 p-4 w-48"
     >
-      <div className="flex flex-col items-center justify-center h-full border-2 border-dashed border-gray-700 rounded-lg">
-        <div className="w-[160px] h-[600px] bg-gray-700 flex items-center justify-center text-gray-500 rounded">
-            Skyscraper Ad (160x600)
-        </div>
-      </div>
+  {/* Skyscraper Ad Slot */}
+    <div className="bg-gray-800/50 rounded-lg p-2 flex justify-center">
+        <AdComponent 
+            adSlot="1234567890" // PLACEHOLDER: You will get this ID from AdSense later
+            style={{ width: '160px', height: '600px' }}
+        />
+    </div>
     </aside>
   );
 };
 
 export default Sidebar;
+
