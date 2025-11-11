@@ -1,5 +1,5 @@
 // !! IMPORTANT: Use the Production URL Vercel gave you !!
-const BACKEND_URL = 'https://jigsaw-backend-your-url.vercel.app/api/generate';
+const BACKEND_URL = 'https://jigsaw-backend.vercel.app/api/generate';
 
 // --- WE KEEP ALL THIS LOGIC ---
 const aspectRatios: { [key: number]: "1:1" | "4:3" | "3:4" | "16:9" | "9:16" } = {
