@@ -9,7 +9,7 @@ import PuzzleBoard from './components/PuzzleBoard';
 import Toast from './components/Toast';
 import CompletionMessage from './components/CompletionMessage';
 
-export default function App() {
+export default function Game() {
   const [gameState, setGameState] = useState<GameState>(GameState.IDLE);
   const [puzzleImageUrl, setPuzzleImageUrl] = useState<string | null>(null);
   const [difficulty, setDifficulty] = useState<Difficulty>(DIFFICULTIES[1]); // Medium default

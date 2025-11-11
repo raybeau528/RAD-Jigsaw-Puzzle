@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { GameState, Difficulty } from '../types';
 import { GenerateIcon, RandomIcon, ImportIcon, SaveIcon, LoadIcon, PreviewIcon, NewGameIcon, DownloadIcon } from './icons/Icons';
 
@@ -84,8 +85,19 @@ const Header: React.FC<HeaderProps> = ({
 
   return (
     <header className="relative z-10 p-2 bg-gray-800/70 backdrop-blur-sm border-b border-gray-700/50 flex flex-wrap items-center justify-between gap-2 shadow-lg">
-      <h1 className="text-xl md:text-2xl font-bold text-white tracking-wider">RAD Jigsaw Puzzle</h1>
       
+      {/* Left Side: Title and Navigation */}
+      <div className="flex items-center gap-6">
+        <h1 className="text-xl md:text-2xl font-bold text-white tracking-wider">Endless Jigsaws</h1>
+        
+        <nav className="hidden sm:flex items-center gap-4">
+          <Link to="/" className="text-white hover:text-blue-300 font-semibold text-sm transition-colors">Play</Link>
+          <Link to="/about" className="text-gray-300 hover:text-white text-sm transition-colors">About</Link>
+          <Link to="/privacy" className="text-gray-300 hover:text-white text-sm transition-colors">Privacy</Link>
+        </nav>
+      </div>
+      
+      {/* Right Side: Game Controls */}
       <div className="flex flex-wrap items-center gap-2">
         {isPreGame && (
           <>
