@@ -245,7 +245,7 @@ export default function App() {
     if (gameState === GameState.IDLE && !puzzleImageUrl) {
         return (
             <div className="text-center text-gray-300 p-10 bg-gray-900/50 rounded-xl shadow-2xl max-w-2xl border border-gray-700/50">
-                <h2 className="text-4xl font-bold text-white mb-4">Welcome to the RAD Jigsaw Puzzle!</h2>
+                <h2 className="text-4xl font-bold text-white mb-4">Welcome to Endless Jigsaws!</h2>
                 <p className="text-lg mb-6">
                     Turn any idea into a puzzle. Here’s how to start:
                 </p>
