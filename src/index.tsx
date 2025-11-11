@@ -1,14 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
-// Remove any './index.css' if you deleted the file, or keep it if you have it.
-import { BrowserRouter } from 'react-router-dom' // <--- 1. Add Import
+// 1. Change this import
+import { HashRouter } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    {/* 2. Wrap App with BrowserRouter */}
-    <BrowserRouter>
+    {/* 2. Change this tag */}
+    <HashRouter>
       <App />
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>,
 )
