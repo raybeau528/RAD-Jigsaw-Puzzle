@@ -1,19 +1,22 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import ReactGA from 'react-ga4'; 
 import Game from './Game';
-import About from './About';     // Ensure you created this file earlier
-import Privacy from './Privacy'; // Ensure you created this file earlier
+import About from './About';
+import Privacy from './Privacy';
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    // This tells Google whenever the user switches pages
+    ReactGA.send({ hitType: "pageview", page: location.pathname + location.hash });
+  }, [location]);
+
   return (
     <Routes>
-      {/* The Home Page ("/") loads the Game */}
       <Route path="/" element={<Game />} />
-      
-      {/* The About Page */}
       <Route path="/about" element={<About />} />
-      
-      {/* The Privacy Page */}
       <Route path="/privacy" element={<Privacy />} />
     </Routes>
   );

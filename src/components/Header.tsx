@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import ReactGA from 'react-ga4'; // Import GA
 import { GameState, Difficulty } from '../types';
 import { GenerateIcon, RandomIcon, ImportIcon, SaveIcon, LoadIcon, PreviewIcon, NewGameIcon, DownloadIcon } from './icons/Icons';
 
@@ -76,9 +77,18 @@ const Header: React.FC<HeaderProps> = ({
     };
   }, []);
 
+  // --- UPDATED FUNCTION WITH ANALYTICS ---
   const handleGenerateClick = () => {
+    // Track the event in Google Analytics
+    ReactGA.event({
+      category: "Image",
+      action: "Generate Clicked",
+      label: prompt || "Random/Empty Prompt" // Tracks what they typed (optional)
+    });
+
     onGenerate(prompt);
   };
+  // ---------------------------------------
   
   const isPreGame = gameState === GameState.IDLE || gameState === GameState.IMAGE_LOADED;
   const isImageReady = gameState !== GameState.IDLE;
